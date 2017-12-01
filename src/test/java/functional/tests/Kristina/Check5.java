@@ -16,7 +16,7 @@ public class Check5 extends BaseTest {
     public void checkStudents() {
         getPageByURL(WILEY_URL);
         getStudentsElement().click();
-        WebElement studentsButton = driver.findElements(By.cssSelector(".autonavLevel1 > li")).get(STUDENT_LINK_INDEX).findElement(By.cssSelector("*"));
+        WebElement studentsButton = driver.findElements(By.cssSelector(".autonavLevel1 > li")).get(STUDENT_LINK_INDEX).findElement(By.cssSelector("span"));
         assert (studentsButton.getTagName().equals(SPAN_TAG));
         assert (studentsButton.getCssValue("color").equals(COLOR_BUTTON));
     }
