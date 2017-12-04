@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import java.util.*;
 
-public class CheckListItems9 extends BaseTest {
+public class Check_List_forDummies_Items extends BaseTest {
 
     private static final String WILEY_URL = "http://www.wiley.com/WileyCDA/";
     private static final By INPUT_TOP_LOCATOR = By.cssSelector("input.search-form-text");
@@ -15,7 +15,7 @@ public class CheckListItems9 extends BaseTest {
     private static final By HOME_LOCATOR = By.xpath("//a[text()='Home']");
     private static final By PRODUCT_TITLE_LOCATOR = By.cssSelector("h1.productDetail-title");
 
-    @Test()
+    @Test
     public void check_email() {
         getPageByURL(WILEY_URL);
         getInputTopElement().sendKeys(KEYS_TO_ENTER);

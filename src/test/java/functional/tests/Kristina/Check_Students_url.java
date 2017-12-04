@@ -4,14 +4,14 @@ import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Wiley2_test extends BaseTest {
+public class Check_Students_url extends BaseTest {
 
     private static final String WILEY_URL = "http://www.wiley.com/WileyCDA/";
     private static final By STUDENTS_LOCATOR = By.xpath("//a[text()='Students']");
     private static final By STUDENTS_HEADER = By.xpath("//h1[text()='Students']");
 
     @Test
-    public void search_in_wiley() {
+    public void CheckUrl() {
         getPageByURL(WILEY_URL);
         getStudentsElement().click();
         Assert.assertEquals(driver.getCurrentUrl(), "http://www.wiley.com/WileyCDA/Section/id-404702.html");

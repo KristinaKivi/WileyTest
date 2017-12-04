@@ -3,20 +3,17 @@ package functional.tests.Kristina;
 import org.openqa.selenium.*;
 import org.testng.annotations.Test;
 
-public class Check6 extends BaseTest {
-
+public class Check_Invalid_Email extends BaseTest {
 
     private static final String WILEY_URL = "http://www.wiley.com/WileyCDA/";
-    private static final By STUDENTS_LOCATOR = By.xpath("//a[text()='Students']");
-    private static final By HOME_LOCATOR = By.xpath("//a[text()='Home']");
+    private static final By INPUT_LOCATOR = By.cssSelector("input.text");
+    private static final String KEYS_TO_ENTER = "workgmail.ru";
 
 
     @Test
-    public void Click_home() {
+    public void check_email() {
         getPageByURL(WILEY_URL);
-        getStudentsElement().click();
-        getHomeElement().click();
-
+        getInputElement().sendKeys(KEYS_TO_ENTER);
         clickOnHomePageArrow();
         checkAlert();
     }
@@ -32,19 +29,16 @@ public class Check6 extends BaseTest {
 
     private void checkAlert() {
         Alert alert = driver.switchTo().alert();
-        assert (alert.getText().equals("Please enter email address"));
+        assert (alert.getText().equals("Invalid email address."));
         alert.accept();
     }
 
-    private WebElement getStudentsElement() {
-        return driver.findElement(STUDENTS_LOCATOR);
-    }
-
-    private WebElement getHomeElement() {
-        return driver.findElement(HOME_LOCATOR);
-    }
 
     private void getPageByURL(String url) {
         driver.get(url);
+    }
+
+    private WebElement getInputElement() {
+        return driver.findElement(INPUT_LOCATOR);
     }
 }

@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 
-public class CheckInstitutins12 extends BaseTest {
+public class Check_newTab_Institutions extends BaseTest {
 
     private static final String WILEY_URL = "http://www.wiley.com/WileyCDA/";
     private static final By INSITUTIONS_LOCATOR = By.xpath("//a[text()='Institutions']");

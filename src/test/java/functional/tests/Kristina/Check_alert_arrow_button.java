@@ -3,20 +3,18 @@ package functional.tests.Kristina;
 import org.openqa.selenium.*;
 import org.testng.annotations.Test;
 
-public class CheckInvalidEmail8 extends BaseTest {
+public class Check_alert_arrow_button extends BaseTest {
+
 
     private static final String WILEY_URL = "http://www.wiley.com/WileyCDA/";
-    private static final By INPUT_LOCATOR = By.cssSelector("input.text");
-    private static final String KEYS_TO_ENTER = "workgmail.ru";
 
 
     @Test
-    public void check_email() {
+    public void Click_home() {
         getPageByURL(WILEY_URL);
-        getInputElement().sendKeys(KEYS_TO_ENTER);
+
         clickOnHomePageArrow();
         checkAlert();
-    }
 
     private void clickOnHomePageArrow() {
         // Click with Selenium doesn't work so i will use click with js
@@ -29,16 +27,11 @@ public class CheckInvalidEmail8 extends BaseTest {
 
     private void checkAlert() {
         Alert alert = driver.switchTo().alert();
-        assert (alert.getText().equals("Invalid email address."));
+        assert (alert.getText().equals("Please enter email address"));
         alert.accept();
     }
 
-
-    private void getPageByURL(String url) {
+        private void getPageByURL(String url) {
         driver.get(url);
-    }
-
-    private WebElement getInputElement() {
-        return driver.findElement(INPUT_LOCATOR);
     }
 }

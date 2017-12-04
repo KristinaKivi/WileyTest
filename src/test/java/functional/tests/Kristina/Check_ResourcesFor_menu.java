@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import java.util.*;
 
-public class Check_Resources_For extends BaseTest {
+public class Check_ResourcesFor_menu extends BaseTest {
 
     private static final String WILEY_URL = "http://www.wiley.com/WileyCDA/";
     private static final By STUDENTS_LOCATOR = By.xpath("//a[text()='Students']");
