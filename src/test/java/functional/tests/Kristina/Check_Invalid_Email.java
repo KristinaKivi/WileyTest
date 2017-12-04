@@ -10,7 +10,6 @@ public class Check_Invalid_Email extends BaseTest {
     private static final By INPUT_LOCATOR = By.cssSelector("input.text");
     private static final String KEYS_TO_ENTER = "workgmail.ru";
 
-
     @Test
     public void check_email() {
         getPageByURL(WILEY_URL);
