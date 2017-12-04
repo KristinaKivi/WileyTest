@@ -12,9 +12,7 @@ public class BaseTest {
     public void beforeTest() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-fullscreen");
-
         driver = new ChromeDriver(options);
-
     }
 
     @AfterTest

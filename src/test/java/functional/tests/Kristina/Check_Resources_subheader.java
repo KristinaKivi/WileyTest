@@ -1,33 +1,28 @@
 package functional.tests.Kristina;
 
 import org.openqa.selenium.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Check_Resources_subheader extends BaseTest {
 
     private static final String WILEY_URL = "http://www.wiley.com/WileyCDA/";
-
+    private static final List<String> LINK_TITLES = Arrays.asList ("Students","Authors","Instructors","Librarians","Societies","Conferences","Booksellers","Corporations","Institutions");
 
     @Test
     public void search_resourses() {
         getPageByURL(WILEY_URL);
         List<WebElement> links = driver.findElement(By.cssSelector(".fe_resource_link.subjects-hoverlist")).findElements(By.cssSelector("li"));
-        assert (links.size() == 9);
-        assert (links.get(0).getText().equals("Students"));
-        assert (links.get(1).getText().equals("Authors"));
-        assert (links.get(2).getText().equals("Instructors"));
-        assert (links.get(3).getText().equals("Librarians"));
-        assert (links.get(4).getText().equals("Societies"));
-        assert (links.get(5).getText().equals("Conferences"));
-        assert (links.get(6).getText().equals("Booksellers"));
-        assert (links.get(7).getText().equals("Corporations"));
-        assert (links.get(8).getText().equals("Institutions"));
+        Assert.assertTrue (links.size() == 9);
+        for (int i = 0; i < links.size(); i++) {
+            String actualTitle = links.get(i).findElement(By.cssSelector("*")).getText();
+            Assert.assertTrue(LINK_TITLES.get(i).equals(actualTitle));
+        }
     }
-
-    private void getPageByURL(String url) {
-        driver.get(url);
+        private void getPageByURL(String url) {
+            driver.get(url);
+        }
     }
-}
-

@@ -21,7 +21,6 @@ public class Check_links_in_top_menu extends BaseTest {
         Assert.assertTrue(getAWElement().isDisplayed());
         Assert.assertTrue(getCUElement().isDisplayed());
         Assert.assertTrue(getHelpElement().isDisplayed());
-
     }
     private WebElement getHelpElement() {
         return driver.findElement(HELP_LOCATOR);

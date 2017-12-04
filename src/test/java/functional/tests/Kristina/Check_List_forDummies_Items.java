@@ -21,7 +21,7 @@ public class Check_List_forDummies_Items extends BaseTest {
         getInputTopElement().sendKeys(KEYS_TO_ENTER);
         getMagnifierElement().click();
         int linksSize = driver.findElements(By.cssSelector(".product-listing.size100")).size();
-        assert (linksSize != 0);
+        Assert.assertTrue(linksSize != 0);
         List<WebElement> links = driver.findElements(By.cssSelector(".product-title > a"));
         int randomIndex = new Random().nextInt(links.size());
         WebElement link = links.get(randomIndex);
@@ -30,21 +30,16 @@ public class Check_List_forDummies_Items extends BaseTest {
         link.click();
         Assert.assertEquals(driver.findElement(PRODUCT_TITLE_LOCATOR).getText(), productTitle);
         getHomeElement().click();
-
     }
-
     private WebElement getHomeElement() {
         return driver.findElement(HOME_LOCATOR);
     }
-
     private WebElement getMagnifierElement() {
         return driver.findElement(MAGNIFIER_LOCATOR);
     }
-
     private WebElement getInputTopElement() {
         return driver.findElement(INPUT_TOP_LOCATOR);
     }
-
     private void getPageByURL(String url) {
         driver.get(url);
     }

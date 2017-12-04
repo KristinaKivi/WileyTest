@@ -21,11 +21,9 @@ public class Check_Students_url extends BaseTest {
     private WebElement getStudentsHElement() {
         return driver.findElement(STUDENTS_HEADER);
     }
-
     private WebElement getStudentsElement() {
         return driver.findElement(STUDENTS_LOCATOR);
     }
-
     private void getPageByURL(String url) {
         driver.get(url);
     }
