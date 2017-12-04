@@ -10,11 +10,12 @@ public class Check_alert_arrow_button extends BaseTest {
 
 
     @Test
-    public void Click_home() {
+    public void Click_arrow() {
         getPageByURL(WILEY_URL);
 
         clickOnHomePageArrow();
         checkAlert();
+    }
 
     private void clickOnHomePageArrow() {
         // Click with Selenium doesn't work so i will use click with js
